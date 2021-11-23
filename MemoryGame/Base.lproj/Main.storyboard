@@ -39,14 +39,23 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5oR-pj-dTo">
-                                <rect key="frame" x="119" y="343" width="171" height="43"/>
+                                <rect key="frame" x="119" y="355" width="186" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Enter"/>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgrounds" translatesAutoresizingMaskIntoConstraints="NO" id="T2M-ln-DCL">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gJe-Ia-EVg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gJe-Ia-EVg" firstAttribute="bottom" secondItem="T2M-ln-DCL" secondAttribute="bottom" id="Pnw-cw-IHT"/>
+                            <constraint firstItem="gJe-Ia-EVg" firstAttribute="trailing" secondItem="T2M-ln-DCL" secondAttribute="trailing" id="YDb-S3-toS"/>
+                            <constraint firstItem="T2M-ln-DCL" firstAttribute="top" secondItem="gJe-Ia-EVg" secondAttribute="top" id="ebu-Vc-APh"/>
+                            <constraint firstItem="T2M-ln-DCL" firstAttribute="leading" secondItem="gJe-Ia-EVg" secondAttribute="leading" id="svv-hx-4Cp"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" image="house" catalog="system" id="X1e-3b-vcn"/>
                 </viewController>
@@ -99,7 +108,7 @@
                         <viewLayoutGuide key="safeArea" id="4l7-43-XPj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" image="profile" id="TbM-Np-bGK"/>
+                    <tabBarItem key="tabBarItem" title="Item 2" image="newspaper" catalog="system" id="TbM-Np-bGK"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="65d-7B-Bkh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -161,19 +170,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.14999999999999999" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="goa-3l-oKx">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.14999999999999999" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgrounds" translatesAutoresizingMaskIntoConstraints="NO" id="goa-3l-oKx">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5g3-bK-sqR">
-                                <rect key="frame" x="180" y="576" width="56" height="47"/>
+                                <rect key="frame" x="133" y="532" width="148" height="87"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Start"/>
+                                <buttonConfiguration key="configuration" style="tinted" image="play.fill" catalog="system" title=" Play"/>
                                 <connections>
                                     <action selector="startBtn:" destination="fLt-xb-rnF" eventType="touchUpInside" id="ge0-yB-LKA"/>
                                     <segue destination="BYZ-38-t0r" kind="show" id="BGh-1e-4xi"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MeMory Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zm0-oV-E6v">
+                                <rect key="frame" x="97" y="311" width="228" height="87"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <color key="textColor" systemColor="linkColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XJy-V7-w74"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -237,6 +253,10 @@
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="rsF-2a-qF0"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="syO-dn-4PY"/>
+                                </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gH9-VX-M8b">
                                 <rect key="frame" x="102" y="77" width="181" height="61"/>
@@ -262,10 +282,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background" width="219" height="230"/>
+        <image name="backgrounds" width="650" height="1155"/>
         <image name="gamecontroller" catalog="system" width="128" height="80"/>
         <image name="house" catalog="system" width="128" height="106"/>
-        <image name="profile" width="128" height="128"/>
+        <image name="newspaper" catalog="system" width="128" height="111"/>
+        <image name="play.fill" catalog="system" width="116" height="128"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
