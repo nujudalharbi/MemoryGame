@@ -7,21 +7,17 @@
 
 import UIKit
 
-class ViewController: UIViewController , UICollectionViewDelegate , UICollectionViewDataSource {
+class ViewController: UIViewController , UICollectionViewDelegate , UICollectionViewDataSource  {
     
 //    var cardImges = [Cards]()
-    let imgeCardArr : [UIImage] = [
-    UIImage(named: "moon1")!
-    ]
+    let imgeCardArr = [UIImage(named: "moon1")]
     
+    //     timer ----------------
     @IBOutlet weak var timerLable: UILabel!
-    
-//     timer ----------------
-    
-    var timer : Timer?
-    var milliSeconds : Float = 30 * 1000
-    
-  
+//    var timer : Timer?
+//    var milliSeconds : Float = 30 * 1000
+//
+//
 
     
 
@@ -34,7 +30,7 @@ class ViewController: UIViewController , UICollectionViewDelegate , UICollection
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cardID", for: indexPath) as! ImagesCards
-        cell.images.image = imgeCardArr[indexPath.item]
+           cell.images.image = imgeCardArr[0]
         return cell
     }
     
@@ -45,11 +41,13 @@ class ViewController: UIViewController , UICollectionViewDelegate , UICollection
       
         collectionView.delegate = self
         collectionView.dataSource = self
-//        create timer
-        timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerElapsed), userInfo: nil, repeats: true )
         
-        RunLoop.main.add(timer! , forMode: .common)
-        
+        collectionView.register(UINib(nibName: "ImagesCards", bundle: nil), forCellWithReuseIdentifier: "cardID")
+        //        create timer
+//        timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerElapsed), userInfo: nil, repeats: true )
+//
+//        RunLoop.main.add(timer! , forMode: .common)
+//
        
         // Do any additional setup after loading the view.
         
@@ -58,22 +56,22 @@ class ViewController: UIViewController , UICollectionViewDelegate , UICollection
     
     
 //    timer func -----------------
-    @objc func timerElapsed(){
-        
-        milliSeconds -= 1
+//    @objc func timerElapsed(){
+//
+//        milliSeconds -= 1
 //        conver to seconds
-        let seconds = String(format: "%.2f", milliSeconds/1000)
+//        let seconds = String(format: "%.2f", milliSeconds/1000)
 //        set lable
-        timerLable.text = "time :"
+//        timerLable.text = "time :"
 //        when timer stop
-        if milliSeconds <= 0 {
-            timer?.invalidate()
-            timerLable.textColor = UIColor.red
-            
-            
-            
-        }
-        
+//        if milliSeconds <= 0 {
+//            timer?.invalidate()
+//            timerLable.textColor = UIColor.red
+//
+//
+//
+//        }
+//
         
         
         
@@ -88,5 +86,5 @@ class ViewController: UIViewController , UICollectionViewDelegate , UICollection
 //        }
 //    }
 
-}
+//}
 

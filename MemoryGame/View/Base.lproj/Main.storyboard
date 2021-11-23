@@ -180,7 +180,7 @@
                                 <buttonConfiguration key="configuration" style="tinted" image="play.fill" catalog="system" title=" Play"/>
                                 <connections>
                                     <action selector="startBtn:" destination="fLt-xb-rnF" eventType="touchUpInside" id="ge0-yB-LKA"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="BGh-1e-4xi"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="rEN-LE-reC"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MeMory Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zm0-oV-E6v">

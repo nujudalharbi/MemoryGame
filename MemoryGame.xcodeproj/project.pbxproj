@@ -47,6 +47,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		917BA1C6274CECBB009181F6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		917BA1C7274CED29009181F6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A2262E9C274A322500959246 /* Main.storyboard */,
+				4311CAF0274A5F23006DD513 /* ImagesCards.xib */,
+				A2262EA4274A322700959246 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		917BA1C9274CED66009181F6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A2262E9A274A322500959246 /* ViewController.swift */,
+				916D5F80274BAE8500851A16 /* startGames.swift */,
+				4311CAEF274A5F22006DD513 /* ImagesCards.swift */,
+				A2262E96274A322500959246 /* AppDelegate.swift */,
+				A2262E98274A322500959246 /* SceneDelegate.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		A2262E8A274A322500959246 = {
 			isa = PBXGroup;
 			children = (
@@ -66,15 +95,10 @@
 		A2262E95274A322500959246 /* MemoryGame */ = {
 			isa = PBXGroup;
 			children = (
-				A2262E96274A322500959246 /* AppDelegate.swift */,
-				A2262E98274A322500959246 /* SceneDelegate.swift */,
-				A2262E9A274A322500959246 /* ViewController.swift */,
-				916D5F80274BAE8500851A16 /* startGames.swift */,
-				A2262E9C274A322500959246 /* Main.storyboard */,
-				4311CAEF274A5F22006DD513 /* ImagesCards.swift */,
-				4311CAF0274A5F23006DD513 /* ImagesCards.xib */,
+				917BA1C9274CED66009181F6 /* Controller */,
+				917BA1C7274CED29009181F6 /* View */,
+				917BA1C6274CECBB009181F6 /* Model */,
 				A2262EA2274A322700959246 /* Assets.xcassets */,
-				A2262EA4274A322700959246 /* LaunchScreen.storyboard */,
 				A2262EA7274A322700959246 /* Info.plist */,
 				A2262E9F274A322500959246 /* MemoryGame.xcdatamodeld */,
 				91B5488E274AB9B9006711D4 /* Cards.swift */,
