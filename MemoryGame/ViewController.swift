@@ -132,8 +132,7 @@ class ViewController: UIViewController , UICollectionViewDelegate , UICollection
         
         
         
-        
-    }
+   
     
     
     
