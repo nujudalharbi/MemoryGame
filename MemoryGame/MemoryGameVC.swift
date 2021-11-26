@@ -1,4 +1,4 @@
-//
+ //
 //  ViewController.swift
 //  MemoryGame
 //
@@ -16,7 +16,7 @@ class MemoryGameVC: UIViewController , UICollectionViewDelegate , UICollectionVi
         UIImage(named: "image2") ,
         UIImage(named: "image3") ,
         UIImage(named: "image3") ,
-     UIImage(named: "image8") ,
+        UIImage(named: "image8") ,
        UIImage(named: "image8") ,
         UIImage(named: "image4") ,
         UIImage(named: "image4") ,
@@ -35,6 +35,36 @@ class MemoryGameVC: UIViewController , UICollectionViewDelegate , UICollectionVi
     var selectedCellIndex = 0
     
     @IBOutlet weak var timerLable: UILabel!
+    
+    
+    func setUp(){
+        
+        if self.timer == nil {
+            
+            self.timer = Timer.scheduledTimer(timeInterval: 1.0,
+                                              target: self,
+                                              selector: #selector(timerMethod),
+                                              userInfo: nil,
+                                              repeats: true )
+            
+            
+        }
+        
+    }
+    
+    
+        @objc func timerMethod (){
+            timerLable.text = String(counter)
+            counter += 1
+           
+        }
+
+// stop timer and save
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        print (".......")
+    
+    }
     
   
     
@@ -59,9 +89,8 @@ class MemoryGameVC: UIViewController , UICollectionViewDelegate , UICollectionVi
         
         return cell
     }
-    //    ---------------
-    
-    
+
+//     func delete match image
     
     var lastSelectedIndex : Int?
     
@@ -70,16 +99,15 @@ class MemoryGameVC: UIViewController , UICollectionViewDelegate , UICollectionVi
         selectedCellIndex = indexPath.row
         
         let cellObject = collectionView.cellForItem(at: indexPath) as! ImagesCards
-        print("selected image: \(cellObject.images.image)")
-        print("prev image: \(imgeCardArr[indexPath.row])")
+       
         if lastSelectedIndex != nil  {
             if (imgeCardArr[lastSelectedIndex!] == cellObject.images.image && lastSelectedIndex != indexPath.row) {
-                print("Matched")
+          
                 lastSelectedIndex = nil
-                //cellObject.updateCell(false)
+//                cellObject.updateCell(false)
             }
         } else {
-            print("Keep going")
+         
             lastSelectedIndex = indexPath.row
         }
         print("Last index: \(lastSelectedIndex), current Index: \(selectedCellIndex)")
@@ -118,38 +146,7 @@ class MemoryGameVC: UIViewController , UICollectionViewDelegate , UICollectionVi
         
         
     
-    func setUp(){
-        
-        
-        if self.timer == nil {
-            
-            self.timer = Timer.scheduledTimer(timeInterval: 1.0,
-                                              target: self,
-                                              selector: #selector(timerMethod),
-                                              userInfo: nil,
-                                              repeats: true )
-            
-            
-        }
-        
-    }
-    
-    
-        @objc func timerMethod (){
-            timerLable.text = String(counter)
-            counter += 1
-           
-        }
-//
-//    func stopTimer(){
-//        timer.invalidate()
-//    }
-//
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        print (".......")
-    }
-    
+
     
 }
 
@@ -159,11 +156,5 @@ class MemoryGameVC: UIViewController , UICollectionViewDelegate , UICollectionVi
     
     
     
-//    func login(enteredUsernsme: String, enteredpassword: String){
-//        if username == enteredUsernsme && password == enteredpassword {
-//
-//        }
-//    }
 
-//}
 
