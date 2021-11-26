@@ -85,6 +85,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="house" catalog="system" id="X1e-3b-vcn"/>
                     <connections>
+                        <outlet property="bgImg" destination="VSF-CK-nmI" id="GhQ-fg-6BL"/>
+                        <outlet property="label" destination="agM-AP-xWg" id="Aha-2E-UtF"/>
                         <outlet property="password" destination="yyb-oK-Iqc" id="Dhv-8m-r1A"/>
                         <outlet property="username" destination="ah4-l7-QM7" id="d5N-Ou-kTI"/>
                     </connections>

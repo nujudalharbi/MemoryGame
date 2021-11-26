@@ -173,8 +173,7 @@ class MemoryGameVC: UIViewController , UICollectionViewDelegate , UICollectionVi
 
  
         
-   
-    
+
     
     
 
