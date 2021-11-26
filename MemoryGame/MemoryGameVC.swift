@@ -41,7 +41,7 @@ class MemoryGameVC: UIViewController , UICollectionViewDelegate , UICollectionVi
         
         if self.timer == nil {
             
-            self.timer = Timer.scheduledTimer(timeInterval: 1.0,
+            self.timer = Timer.scheduledTimer(timeInterval: 1,
                                               target: self,
                                               selector: #selector(timerMethod),
                                               userInfo: nil,
@@ -54,9 +54,11 @@ class MemoryGameVC: UIViewController , UICollectionViewDelegate , UICollectionVi
     
     
         @objc func timerMethod (){
-            timerLable.text = String(counter)
+            
             counter += 1
-           
+            let time = seconds(second: counter)
+            let timeString = maketime(hours: time.0, minutes: time.1, second: time.2)
+            timerLable.text = timeString
         }
 
 // stop timer and save
@@ -66,6 +68,25 @@ class MemoryGameVC: UIViewController , UICollectionViewDelegate , UICollectionVi
     
     }
     
+    
+    func seconds (second : Int)-> (Int, Int , Int){
+        
+        return ((second / 3600 ), ((second % 3600) / 60 ) , ((second % 3600) % 60))
+    }
+    func maketime(hours : Int, minutes : Int , second : Int)-> String{
+        
+        
+        var timeString = ""
+        timeString += String(format: "%02d ", hours)
+        
+        
+         timeString += " : "
+        timeString += String(format: "%02d ", minutes)
+         timeString  += " : "
+        timeString += String(format: "%02d ", second)
+        
+        return timeString
+    }
   
     
     //  -------------   func delegate
@@ -144,10 +165,10 @@ class MemoryGameVC: UIViewController , UICollectionViewDelegate , UICollectionVi
         
         
         
-        
-    
+//   --------------------------------------
 
-    
+
+   
 }
 
  
